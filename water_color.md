@@ -327,7 +327,7 @@ That's it! There are too many variants of these rules to go over, so I'll leave 
 
 [Here's a piece](https://www.instagram.com/p/BdhSOjAF3FV) I made with an implementation of this algorithm in my toolkit [valora](https://github.com/turnage/valora).
 
-##### Using a gpu like a committed person
+#### Using a gpu like a committed person
 
 This will become slow on cpu if you demand too much even if your implementation is solid. As with most generative art rules it's easier to experiment with it on CPU and if you decide you really want to keep it around you may want to invest in writing shaders to do the work on GPU instead.
 
