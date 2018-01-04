@@ -2,17 +2,20 @@
 
 This post and the covered work were inspired by Tyler Hobb’s post [A Generative Approach To Simulating Watercolor Paints](http://www.tylerlhobbs.com/writings/watercolor). I came across it in April and decided to replicate it from scratch as a first project to build out my own generative art toolkit. This is a walk through of the fun!
 
-I don't go into nearly sufficient detail for anyone to follow along step by step, but I hope to cover the basic ideas and provide links to resources so that if you do decide to implement what I describe, you can.
-
 Here's a preview of some results:
 
 ![results](https://imgur.com/534O1j1.gif)
+
+In my seven years of programming I have had the most fun in the past few months after discovering [generative art](https://en.wikipedia.org/wiki/Generative_art). Hopefully you'll see in this guide how fun it can be, getting interesting images to look at as a reward for every little challenge you take on. Even the bugs look interesting! If you are a new programmer or new to generative art I strongly recommend trying it out! [Processing](https://processing.org/) (~Java, (with JavaScript and Pyton APIs available)), [Quil](http://quil.info/) (Clojure), or [OpenFrameworks](http://openframeworks.cc/) (C++) are powerful tools to get started; you can even try it in your browser at [Open Processing](https://www.openprocessing.org/).
+
+I don't go into nearly sufficient detail for anyone to follow along step by step, but I hope to cover the basic ideas and provide links to resources so that if you decide to implement what I describe, you can.
 
 ## Table of Contents
  
 * [An image](#an-image)
 * [Rendering polygons](#rendering-polygons)
 	* [Representing polygons](#representing-polygons)
+	* [Choosing a coordinate space](#choosing-a-coordinate-space)
 	* [Rastering polygons](#rastering-polygons)
 	* [Super sampling polygons](#super-sampling-polygons)
 	* [Using a gpu like a reasonable person](#using-a-gpu-like-a-reasonable-person)
@@ -34,6 +37,16 @@ In this chapter we will render a simple square.
 
 ![preview](https://i.imgur.com/5NDakXI.png)
 
+## Choosing a coordinate space
+
+We need a coordinate space for our polygons to exist in. We will use floating point coordinates because polygons have infinite resolution, even if our output image has a finite one we use integer coordinates for.
+
+This walkthrough will output a square using this coordinate space to keep things simple:
+
+![coordinates](https://i.imgur.com/FZSbIbk.png)
+
+(0.0, 0.0) refers to the bottom left and (1.0, 1.0) refers to the top right.
+
 ### Representing polygons
 
 First thing, let's get a polygon type to work with. For the purposes of this walkthrough we will use only closed polygons, so my polygon type looks like:
@@ -47,11 +60,9 @@ data Polygon = Polygon { verts :: V.Vector Point }
 ```
 Where I assume that the last vertex connects with the first vertex to close the polygon.
 
-We're using Doubles instead of integers (which would be all we need to organize pixels) because polygons are continuous, which will become relevant later.
-
 ### Rastering Polygons
 
-Polygon rendering usually works through some variation of [scanline rendering](https://en.wikipedia.org/wiki/Scanline_rendering).
+Polygon rendering usually uses some variation of [scanline rendering](https://en.wikipedia.org/wiki/Scanline_rendering).
 
 If we plot our polygon and imagine a line scanning horizontally across it, we can count the intersections it makes. See this illustration by Vierge Marie:
 
@@ -90,7 +101,7 @@ We need to know the slope and boundaries of each of the polygon's edges; the `Sc
 * Is this edge intersected by a scan line at height y?
 * Is this edge to the left of column of x?
 
-You can discard edges with slopes of 0; edges parallel to the scanlines don't help.
+You can discard edges with slopes of 0; edges parallel to scanlines don't help.
 
 I used this type:
 ```haskell
@@ -146,7 +157,7 @@ There are many anti-aliasing methods to choose from, but this simple technique c
 
 ![less_jank](https://i.imgur.com/G9m1lkg.png)
 
-Some steps are still visible here where the lines almost become parallel with ground (the worst case). You can take your pursuit of smooth polygons much further if that's your taste. [See here](http://mlab.uiah.fi/~kkallio/antialiasing/EdgeFlagAA.pdf) for a good start.
+Some steps are still visible here where the lines almost become parallel with scanlines (the worst case). You can take your pursuit of smooth polygons much further if that's your taste. [See here](http://mlab.uiah.fi/~kkallio/antialiasing/EdgeFlagAA.pdf) for a good start.
 
 ### Using a gpu like a reasonable person
 
