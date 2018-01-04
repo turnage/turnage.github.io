@@ -16,7 +16,7 @@ I don't go into nearly sufficient detail for anyone to follow along step by step
 * [Rendering polygons](#rendering-polygons)
 	* [Representing polygons](#representing-polygons)
 	* [Choosing a coordinate space](#choosing-a-coordinate-space)
-	* [Rastering polygons](#rastering-polygons)
+	* [Rendering polygons](#rendering-polygons)
 	* [Super sampling polygons](#super-sampling-polygons)
 	* [Using a gpu like a reasonable person](#using-a-gpu-like-a-reasonable-person)
 * [Making polygons into watercolor](#making-polygons-into-watercolor)
@@ -60,7 +60,7 @@ data Polygon = Polygon { verts :: V.Vector Point }
 ```
 Where I assume that the last vertex connects with the first vertex to close the polygon.
 
-### Rastering Polygons
+### Rendering Polygons
 
 Polygon rendering usually uses some variation of [scanline rendering](https://en.wikipedia.org/wiki/Scanline_rendering).
 
