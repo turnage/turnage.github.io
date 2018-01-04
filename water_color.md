@@ -30,6 +30,7 @@ I don't go into nearly sufficient detail for anyone to follow along step by step
 		* [Deriving local strength](#deriving-local-strength)
 	* [Subdiving our n-gon](#subdividing-our-n-gon)
 	* [Creating a watercolor splotch](#creating-a-watercolor-splotch)
+		* [Using a gpu like a committed person](#using-a-gpu-like-a-committed-person)
 
 ## An image
 
@@ -325,5 +326,9 @@ Or you could make the vertex offsets pull inward toward the polygon center inste
 That's it! There are too many variants of these rules to go over, so I'll leave them to explore.
 
 [Here's a piece](https://www.instagram.com/p/BdhSOjAF3FV) I made with an implementation of this algorithm in my toolkit [valora](https://github.com/turnage/valora).
+
+###### Using a gpu like a committed person
+
+This will become slow on cpu if you demand too much even if your implementation is solid. As with most generative art rules it's easier to experiment with it on CPU and if you decide you really want to keep it around you may want to invest in writing shaders to do the work on GPU instead.
 
 If you have questions feel free to ping me on Reddit at [/u/roxven](https://www.reddit.com/user/roxven)! 
