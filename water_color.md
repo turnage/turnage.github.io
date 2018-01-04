@@ -95,7 +95,7 @@ To start we will do this for every polygon:
 
 I'll include some Haskell sample code below for guidance because I had a good deal of trouble understanding handwavy guides like this when I first implemented it.
 
-###### Deriving Edges
+##### Deriving Edges
 ```haskell
 edges :: Polygon -> V.Vector (Point, Point)
 edges Polygon { vertices } = V.zip vertices rotatedLeft
@@ -103,7 +103,7 @@ edges Polygon { vertices } = V.zip vertices rotatedLeft
     rotatedLeft = V.snoc (V.head vertices) $ V.tail vertices
 ```
 
-###### Preprocess edges for scanline rendering
+##### Preprocess edges for scanline rendering
 
 As we travel left to right over each row with a scanline, we need to know some things about our polygon's edges to count how many we intersected so far.
 
@@ -143,7 +143,7 @@ passedBy Point {x, y} (ScanEdge {slope, ..}) =
     Vertical staticX -> staticX < x
 ```
 
-###### Shade a pixel
+##### Shade a pixel
 ```haskell
 inPoly :: Point -> Polygon -> Bool
 inPoly point poly = odd $ V.length crossedEdges
@@ -228,7 +228,7 @@ The algorithm:
 
 Our local strength will be the distance between the vertex's surrounding neighbors. So when warping B in vertex set A -> B -> C, our local strength is the distance between A -> C; this should be the upper bound on the vertex's offset.
 
-##### Finding the polygon center
+#### Finding the polygon center
 
 ```haskell
 -- The center of a bounding box around the polygon.
@@ -243,7 +243,7 @@ center Poly {vertices} = Point {x = (right + left) / 2, y = (top + bottom) / 2}
     xs = V.map (x) vertices
 ```
 
-##### Deriving local strength
+#### Deriving local strength
 
 ```haskell
 distance :: Point -> Point -> Double
@@ -327,7 +327,7 @@ That's it! There are too many variants of these rules to go over, so I'll leave 
 
 [Here's a piece](https://www.instagram.com/p/BdhSOjAF3FV) I made with an implementation of this algorithm in my toolkit [valora](https://github.com/turnage/valora).
 
-###### Using a gpu like a committed person
+##### Using a gpu like a committed person
 
 This will become slow on cpu if you demand too much even if your implementation is solid. As with most generative art rules it's easier to experiment with it on CPU and if you decide you really want to keep it around you may want to invest in writing shaders to do the work on GPU instead.
 
