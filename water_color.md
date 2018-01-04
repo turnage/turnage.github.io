@@ -91,7 +91,7 @@ To start we will do this for every polygon:
 * Preprocess edges for scanline rendering
 * Calculate which edges will be active at each row
 * Calculate how many of those edges have been passed at each pixel
-* If number of those edges is odd, shade the pixel
+* If the count of those edges is odd, shade the pixel
 
 I'll include some Haskell sample code below for guidance because I had a good deal of trouble understanding handwavy guides like this when I first implemented it.
 
