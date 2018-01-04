@@ -22,6 +22,8 @@ I don't go into nearly sufficient detail for anyone to follow along step by step
 * [Making polygons into watercolor](#making-polygons-into-watercolor)
 	* [A regular n-gon to start](#a-regular-n-gon-to-start)
 	* [Warping our n-gon](#warping-our-n-gon)
+		* [Finding the polygon center](#finding-the-polygon-center)
+		* [Deriving local strength](#deriving-local-strength)
 	* [Subdiving our n-gon](#subdividing-our-n-gon)
 	* [Creating a watercolor splotch](#creating-a-watercolor-splotch)
 
