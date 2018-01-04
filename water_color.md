@@ -223,8 +223,7 @@ Our local strength will be the distance between the vertex's surrounding neighbo
 ```haskell
 -- The center of a bounding box around the polygon.
 center :: Poly -> Point
-center Poly {vertices} =
-  Point {x = (right + left) / 2, y = (top + bottom) / 2}
+center Poly {vertices} = Point {x = (right + left) / 2, y = (top + bottom) / 2}
   where
     left = V.minimum xs
     right = V.maximum xs
