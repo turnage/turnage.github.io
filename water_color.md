@@ -37,7 +37,7 @@ In this chapter we will render a simple square.
 
 ![preview](https://i.imgur.com/5NDakXI.png)
 
-## Choosing a coordinate space
+### Choosing a coordinate space
 
 We need a coordinate space for our polygons to exist in. We will use floating point coordinates because polygons have infinite resolution, even if our output image has a finite one we use integer coordinates for.
 
@@ -141,7 +141,7 @@ inPoly point poly = odd $ V.length crossedEdges
 ```
 Once you know the pixel is in the polygon, you can shade it however you want!
 
-### Super sampling polygons
+#### Super sampling polygons
 
 If you implemented what I've described your square will look crisp, but start rendering some irregular polygons and you will see some janky diagonal lines that look like stairs:
 
@@ -159,7 +159,7 @@ There are many anti-aliasing methods to choose from, but this simple technique c
 
 Some steps are still visible here where the lines almost become parallel with scanlines (the worst case). You can take your pursuit of smooth polygons much further if that's your taste. [See here](http://mlab.uiah.fi/~kkallio/antialiasing/EdgeFlagAA.pdf) for a good start.
 
-### Using a gpu like a reasonable person
+#### Using a gpu like a reasonable person
 
 You can follow the rest of this guide with a well written version of the above algorithm; I never had any problems rendering watercolor.
 
@@ -172,7 +172,7 @@ Luckily you can instead just do the reasonable thing and use a gpu! I won't cove
 
 See [The Book of Shaders](https://thebookofshaders.com/) for a good introduction and the [OpenGL wiki](https://www.khronos.org/opengl/wiki/Main_Page) (or the docs for [Vulkan](https://www.khronos.org/vulkan/) if you've got shiny hardware) to get dirty.
 
-### Making polygons into watercolor
+## Making polygons into watercolor
 
 In this chapter we will make our polygons into water color through a series of deformations of the original polygon.
 
