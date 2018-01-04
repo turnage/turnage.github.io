@@ -196,9 +196,9 @@ Using this we can make a regular n-gon by taking n points on the circumference o
 
 ```haskell
 ngon :: Double -> Int -> Point -> Poly
-ngon radius n centroid = Poly { vertices = V.generate n vertex}
+ngon radius n center = Poly { vertices = V.generate n vertex}
   where
-    vertex i = circumPoint centroid radius $ angle i
+    vertex i = circumPoint center radius $ angle i
     angle i = (fromIntegral i) * interval
     interval = (2 * pi) / (fromIntegral n)
 ```
@@ -211,10 +211,44 @@ The algorithm:
 
 1. For each vertex:
 	1. Generate a random offset by sampling a Gaussian distribution.
-	2. (Optionally) Change the sign of the offset so it always moves the vertex _out_ from the polygon centroid.
+	2. (Optionally) Change the sign of the offset so it always moves the vertex _out_ from the polygon center.
 	3. Scale the offset to the local strength.
 
 Our local strength will be the distance between the vertex's surrounding neighbors. So when warping B in vertex set A -> B -> C, our local strength is the distance between A -> C; this should be the upper bound on the vertex's offset.
+
+##### Finding the polygon center
+
+```haskell
+-- The center of a bounding box around the polygon.
+center :: Poly -> Point
+center Poly {vertices} =
+  Point {x = (right + left) / 2, y = (top + bottom) / 2}
+  where
+    left = V.minimum xs
+    right = V.maximum xs
+    top = V.maximum ys
+    bottom = V.minimum ys
+    ys = V.map (y) vertices
+    xs = V.map (x) vertices
+```
+
+##### Deriving local strength
+
+```haskell
+distance :: Point -> Point -> Double
+distance p1 p2 = sqrt $ x ^ 2 + y ^ 2
+  where
+    Point {x, y} = abs $ p1 - p2 -- Point instances Num
+    
+localStrength :: Poly -> Int -> Double
+localStrength Poly {vertices} vertex = distance leftNeighbor rightNeighbor
+  where
+    leftNeighbor = vertices V.! leftIndex
+    leftIndex = if vertex - 1 < 0
+      then (V.length vertices) - 1
+      else vertex - 1
+    rightNeighbor = vertices V.! ((vertex + 1) % (V.length vertices))
+```
 
 Here's how it ought to look, applying it to the polygon recursively:
 
@@ -229,6 +263,24 @@ The algorithm:
 1. For every edge A -> C
 2. Find midpoint B
 3. Generate two edges, A -> B and B -> C
+
+```haskell
+midpoint :: Point -> Point -> Point
+midpoint (Point {x = x1, y = y1}) (Point {x = x2, y = y2}) =
+  Point {x = x1 + (x2 - x1) / 2, y = y1 + (y2 - y1) / 2}
+
+subdivideEdges ::  Poly -> Poly
+subdivideEdges Poly {vertices} = Poly {vertices = vertices'}
+  where
+    vertices' = V.backpermute ((V.++) vertices midpoints) placementIndices
+    placementIndices = V.generate (2 * (V.length vertices)) (place)
+    place i =
+      if odd i
+        then (i `div` 2) + V.length vertices
+        else i `div` 2
+    midpoints = V.map (uncurry midpoint) pairs
+    pairs = edges Poly {vertices}
+```
 
 The polygon's shape shouldn't change. Here's an illustration of subdividing recursively with vertices highlighted:
 
@@ -256,7 +308,7 @@ You can also start from the base polygon at each layer instead of working with d
 
 ![multilayer](https://i.imgur.com/JUEgeRy.png)
 
-Or you could make the vertex offsets pull inward toward the polygon centroid instead of outward:
+Or you could make the vertex offsets pull inward toward the polygon center instead of outward:
 
 ![inward](https://i.imgur.com/BLrwPUp.png)
 
