@@ -107,7 +107,7 @@ edges Poly { vertices } = V.zip vertices rotatedLeft
 
 As we travel left to right over each row with a scanline, we need to know some things about our polygon's edges to count how many we intersected so far.
 
-First we need to know: Is this edge intersected by a scan line at height y? a.k.a. Does this edge exist on row y? Look again at polygon D in the scanline diagram and notice that its top right edge is not present in the row of scanlines b or c. This means we need to know the bottom and top y of each of edge.
+First we need to know: Is this edge intersected by a scan line at height y? a.k.a. Does this edge exist on row y? Look again at polygon D in the scanline diagram and notice that its top right edge is not present in the rows of scanlines b or c. This means we need to know the bottom and top y of each of edge.
 
 Second we need to know: Is this edge to the left of column of x? At what x does the edge intersect the scanline row, and is that x less than the x we're looking at? To do this we must have the edge's slope so we can work backward and find x in terms of y.
 
