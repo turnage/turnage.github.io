@@ -2,4 +2,5 @@ theme: jekyll-theme-cayman
 title: [turnage]
 github:
         is_project_page: false
+google-analytics: UA-39551294-2
 show_downloads: false
