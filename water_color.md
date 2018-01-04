@@ -197,10 +197,10 @@ Using this we can make a regular n-gon by taking n points on the circumference o
 ```haskell
 ngon :: Double -> Int -> Point -> Poly
 ngon radius n centroid = Poly { vertices = V.generate n vertex}
-	where
-		vertex i = circumPoint centroid radius $ angle i
-		angle i = (fromIntegral i) * interval
-		interval = (2 * pi) / (fromIntegral n)
+  where
+    vertex i = circumPoint centroid radius $ angle i
+    angle i = (fromIntegral i) * interval
+    interval = (2 * pi) / (fromIntegral n)
 ```
 
 #### Warping our N-gon
