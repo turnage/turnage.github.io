@@ -6,7 +6,7 @@ I don't go into nearly sufficient detail for anyone to follow along step by step
 
 Here's a preview of some results:
 
-![results](https://imgur.com/y9r38Wh.gif)
+![results](https://imgur.com/534O1j1.gif)
 
 ## Table of Contents
  
