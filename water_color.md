@@ -63,7 +63,7 @@ data Point = Point
 	{ x :: Double
 	, y :: Double }
 
-data Polygon = Polygon { vertices :: V.Vector Point }
+data Poly = Poly { vertices :: V.Vector Point }
 ```
 Where I assume that the last vertex connects with the first vertex to close the polygon.
 
@@ -97,8 +97,8 @@ I'll include some Haskell sample code below for guidance because I had a good de
 
 ##### Deriving Edges
 ```haskell
-edges :: Polygon -> V.Vector (Point, Point)
-edges Polygon { vertices } = V.zip vertices rotatedLeft
+edges :: Poly -> V.Vector (Point, Point)
+edges Poly { vertices } = V.zip vertices rotatedLeft
   where
     rotatedLeft = V.snoc (V.head vertices) $ V.tail vertices
 ```
@@ -145,7 +145,7 @@ passedBy Point {x, y} (ScanEdge {slope, ..}) =
 
 ##### Shade a pixel
 ```haskell
-inPoly :: Point -> Polygon -> Bool
+inPoly :: Point -> Poly -> Bool
 inPoly point poly = odd $ V.length crossedEdges
   where
     crossedEdges = V.filter (passedBy point) activeEdges
