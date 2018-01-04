@@ -251,4 +251,6 @@ Or you could make the vertex offsets pull inward toward the polygon centroid ins
 
 That's it! There are too many variants of these rules to go over, so I'll leave them to explore.
 
+[Here's a piece](https://www.instagram.com/p/BdhSOjAF3FV) I made with an implementation of this algorithm in my toolkit [valora](https://github.com/turnage/valora).
+
 If you have questions feel free to ping me on Reddit at [/u/roxven](https://www.reddit.com/user/roxven)! 
