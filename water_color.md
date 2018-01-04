@@ -17,7 +17,11 @@ I don't go into nearly sufficient detail for anyone to follow along step by step
 	* [Representing polygons](#representing-polygons)
 	* [Choosing a coordinate space](#choosing-a-coordinate-space)
 	* [Rendering polygons](#rendering-polygons)
-	* [Super sampling polygons](#super-sampling-polygons)
+		* [Single sampling polygons](#single-sampling-polygons)
+			* [Deriving edges](#deriving-edges)
+			* [Preprocess edges for scanline rendering](#preprocess-edges-for-scanline-rendering)
+			* [Shade a pixel](#shade-a-pixel)
+		* [Super sampling polygons](#super-sampling-polygons)
 	* [Using a gpu like a reasonable person](#using-a-gpu-like-a-reasonable-person)
 * [Making polygons into watercolor](#making-polygons-into-watercolor)
 	* [A regular n-gon to start](#a-regular-n-gon-to-start)
@@ -78,6 +82,8 @@ Look at polygon D and scanline a. Scanline a intersects D twice. If we follow it
 
 This is the crux of scanline rendering: on pixels where we have intersected the polygon an odd number of times, we shade it as part of the polygon.
 
+### Single sampling polygons
+
 To start we will do this for every polygon: 
 
 * Derive the edges of the polygon
@@ -88,7 +94,7 @@ To start we will do this for every polygon:
 
 I'll include some Haskell sample code below for guidance because I had a good deal of trouble understanding handwavy guides like this when I first implemented it.
 
-#### Deriving Edges
+##### Deriving Edges
 ```haskell
 edges :: Polygon -> V.Vector (Point, Point)
 edges Polygon { vertices } = V.zip vertices rotatedLeft
@@ -96,7 +102,7 @@ edges Polygon { vertices } = V.zip vertices rotatedLeft
     rotatedLeft = V.snoc (V.head vertices) $ V.tail vertices
 ```
 
-#### Preprocess edges for scanline rendering
+##### Preprocess edges for scanline rendering
 
 As we travel left to right over each row with a scanline, we need to know some things about our polygon's edges to count how many we intersected so far.
 
@@ -136,7 +142,7 @@ passedBy Point {x, y} (ScanEdge {slope, ..}) =
     Vertical staticX -> staticX < x
 ```
 
-#### Shade a pixel
+##### Shade a pixel
 ```haskell
 inPoly :: Point -> Polygon -> Bool
 inPoly point poly = odd $ V.length crossedEdges
@@ -146,7 +152,7 @@ inPoly point poly = odd $ V.length crossedEdges
 ```
 Once you know the pixel is in the polygon, you can shade it however you want!
 
-#### Super sampling polygons
+### Super sampling polygons
 
 If you implemented what I've described your square will look crisp, but start rendering some irregular polygons and you will see some janky diagonal lines that look like stairs:
 
@@ -164,7 +170,7 @@ There are many anti-aliasing methods to choose from, but this simple technique c
 
 Some steps are still visible here where the lines almost become parallel with scanlines (the worst case). You can take your pursuit of smooth polygons much further if that's your taste. [See here](http://mlab.uiah.fi/~kkallio/antialiasing/EdgeFlagAA.pdf) for a good start.
 
-#### Using a gpu like a reasonable person
+### Using a gpu like a reasonable person
 
 You can follow the rest of this guide with a well written version of the above algorithm; I never had any problems rendering watercolor.
 
