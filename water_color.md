@@ -285,7 +285,7 @@ subdivideEdges Poly {vertices} = Poly {vertices = vertices'}
 
 The polygon's shape shouldn't change. Here's an illustration of subdividing recursively with vertices highlighted:
 
-![subdivision](https://i.imgur.com/0e6UcB0.gif)
+![subdivision](https://imgur.com/JUyoVlo.gif)
 
 #### Creating a watercolor splotch
 
