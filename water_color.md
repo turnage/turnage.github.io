@@ -63,7 +63,7 @@ data Point = Point
 	{ x :: Double
 	, y :: Double }
 
-data Polygon = Polygon { verts :: V.Vector Point }
+data Polygon = Polygon { vertices :: V.Vector Point }
 ```
 Where I assume that the last vertex connects with the first vertex to close the polygon.
 
