@@ -1,0 +1,7 @@
+base_url = "https://paytonturnage.com"
+compile_sass = true
+highlight_code = true
+highlight_theme = "ayu-light"
+build_search_index = true
+
+[extra]
