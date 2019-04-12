@@ -3,11 +3,11 @@ title = "A Generative Approach to Simulating Watercolor Paints from “Scratch�
 date = 2018-01-04
 description = "A walkthrough of water color generation with polygons."
 draft = false
-aliases = ["/water_color"]
-template = "page.html"
-+++
+aliases = ["/water_color", "writing/2018-01-04-water-color"]
 
-## A Generative Approach to Simulating Watercolor Paints from “Scratch”
+[extra]
+rss_include = true
++++
 
 This post and the covered work were inspired by Tyler Hobb’s post [A Generative Approach To Simulating Watercolor Paints](http://www.tylerlhobbs.com/writings/watercolor). I came across it in April and decided to replicate it from scratch as a first project to build out my own generative art toolkit. This is a walk through of the fun!
 

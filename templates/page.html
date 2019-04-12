@@ -1,5 +1,9 @@
 {% include "head.html" %}
+</head>
+
 <body>
-{% include "nav.html" %}
-{{ page.content | safe }}
+    {% include "nav.html" %}
+    <h2>{{ page.title }}</h2>
+    <p>{{ page.date }}</p>
+    {{ page.content | safe }}
 </body>

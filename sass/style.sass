@@ -1,3 +1,6 @@
+$image_spacing: 8px
+$page_width: 750px
+
 *
   -webkit-box-sizing: border-box;
   -moz-box-sizing: border-box;
@@ -9,13 +12,80 @@ img
   margin-left: auto
   margin-right: auto
 
+.img_row
+  width: 100%
+  box-sizing: border-box
+  .col
+    float: left
+    padding: $image_spacing
+  .one_third
+    width: 33.33%
+  .half
+    width: 50%
+  .three_quarters
+    width: 70%
+  .quarter
+    width: 30%
+
+div.showcase
+  img
+    margin-bottom: 14px
+
+div.pitch
+  text-align: center
+  h2
+    margin-top: 0px
+    margin-bottom: 0px
+  p
+    font-size: 19px
+    text-align: left
+  p.caption
+    text-align: center
+    margin-top: 5px
+    font-size: 14px
+  button#purchase_button
+    background-color: #fff
+    text-decoration: none
+    display: inline-block
+    color: #444
+    font-size: 14px
+    border-color: #333
+    padding: 10px
+    border-width: 0.5px
+    transition: background-color 0.7s ease
+    -webkit-transition: background-color 0.7s ease
+
+  button#purchase_button:hover
+    background-color: #ddd
+
+p.caption
+  font-size: 14px
+  color: #666
+  text-align: center
+
+p.gallery_caption
+  margin: 2px
+  font-size: 13px
+  color: #666
+  text-align: center
+
+p.date
+  font-size: 14px
+  color: #666
+  margin-top: 0px
+
+hr
+  border: #222
+  color: #333
+  background-color: #222
+
 nav
   height: 70px
   margin-bottom: 10px
   font-size: 19px
   span#homelink
     font-size: 22px
-    padding: 10px
+    margin-top: 10px
     max-width: 200px
     float: left
   span#navlinks
@@ -34,17 +104,21 @@ a
 
 body
   font-family: 'Montserrat', sans-serif
-  padding: 10px auto
+  padding: 11px
   margin: 40px auto
-  max-width: 650px
+  max-width: $page_width
   line-height: 1.6
-  font-size: 20px
+  font-size: 23px
   color: #222
-  padding: 0
   overflow: auto
+  p.work_desc
+    text-align: center
+    font-size: 15px
 
-.code
-  padding: 100px auto
+pre
+  padding: 8px
+  font-size: 19px
+  overflow: auto
 
 h1
   text-align: center
