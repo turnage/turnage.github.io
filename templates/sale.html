@@ -19,18 +19,6 @@
         <div class="col quarter pitch">
             <h2>{{page.title}}</h2>
             <p class="caption">{{page.date}}</p>
-            <p class="caption">{{page.extra.size}}</p>
-            <form action="https://www.paypal.com/cgi-bin/webscr" method="post" target="_top">
-                <input type="hidden" name="cmd" value="_s-xclick">
-                <input type="hidden" name="hosted_button_id" value={{page.extra.id}}>
-                <button style="background-color: #fff; text-decoration: none; display: inline-block; color: #444; font-size: 14px; border-color: #333; padding: 10px; border-width: 0.5px"
-                    id="purchase_button" name="submit">${{page.extra.price}}</button>
-            </form>
-            {{page.content | safe}}
-            <hr>
-            <p>All works are single-edition; after printing a single output, I retire the program.</p>
-            <p>All works are Giclée prints on Hahnemühle German Etching 310gsm.</p>
-            <p>I sign and ship all works from Seattle, usually within 1-2 weeks of order.</p>
         </div>
     </div>
 </body>
