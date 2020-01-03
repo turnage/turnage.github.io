@@ -20,8 +20,8 @@ Prerequisites:
 2. An interest in generative art
 
 <div class="img_row">
-  <img class="col half" src="https://i.imgur.com/YGtcMYs.jpg" title="Seed 347593857234897520"/>
-  <img class="col half" src="https://i.imgur.com/nsNn1kV.jpg" title="Seed 99924583058"/>
+  <img class="col half" src="/assets/YGtcMYs.gif" title="Seed 347593857234897520"/>
+  <img class="col half" src="/assets/nsNn1kV.gif" title="Seed 99924583058"/>
 </div>
 
 <p class="caption">Some images generated using the methods described in this article.</p>
@@ -77,7 +77,7 @@ def draw():
 
 You should see this:
 
-![](https://i.imgur.com/cJHWroR.png)
+![](/assets/cJHWroR.gif)
 
 Congratulations! You've got your canvas and paints! Now it's time to sweat and make art.
 
@@ -162,14 +162,14 @@ def draw():
 
 It should look similar to this!
 
-![](https://i.imgur.com/eXSX0tJ.png)
+![](/assets/eXSX0tJ.gif)
 
 #### Testing Circles For Overlap
 
 Circles are pretty easy to test for overlap. We just need to know if the centers of two circles are
 closer than the sum of their radii. Here's an MSPaint diagram I best-effort-ed to explain:
 
-![](https://i.imgur.com/IhNEHMN.png)
+![](/assets/IhNEHMN.gif)
 
 Let's add two methods to our classes to find the distance between points and the distance between the edges of two
 circles.
@@ -236,7 +236,7 @@ def draw():
 
 Your output should look something like this!
 
-![](https://i.imgur.com/SLiMNLO.png)
+![](/assets/SLiMNLO.gif)
 
 Congratulations! You have the start of something interesting! Now it's up to you to explore. Some
 suggestions:

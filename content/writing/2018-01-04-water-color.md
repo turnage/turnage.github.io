@@ -13,7 +13,7 @@ This post and the covered work were inspired by Tyler Hobb’s post [A Generativ
 
 Here's a preview of some results:
 
-![results](https://imgur.com/534O1j1.gif)
+![results](/assets/534O1j1.gif)
 
 In my seven years of programming I have had the most fun in the past few months after discovering [generative art](https://en.wikipedia.org/wiki/Generative_art). Hopefully you'll see in this guide how fun it can be getting interesting images to look at as a reward for every little challenge you take on. Even the bugs look interesting! If you are a new programmer or unfamiliar with generative art I strongly recommend trying it out! [Processing](https://processing.org/) (~Java, (with JavaScript and Python APIs available)), [Quil](http://quil.info/) (Clojure), or [OpenFrameworks](http://openframeworks.cc/) (C++) are powerful tools to get started; you can even try it in your browser at [Open Processing](https://www.openprocessing.org/). Come share your work with us in [/r/generative](https://www.reddit.com/r/generative/) if you make something, no matter how simple! 
 
@@ -55,7 +55,7 @@ it.
 
 In this chapter we will render a simple square.
 
-![preview](https://i.imgur.com/5NDakXI.png)
+![preview](/assets/5NDakXI.gif)
 
 ### Choosing a coordinate space
 
@@ -63,7 +63,7 @@ We need a coordinate space for our polygons to exist in. We will use floating po
 
 This walkthrough will output a square using this coordinate space to keep things simple:
 
-![coordinates](https://i.imgur.com/FZSbIbk.png)
+![coordinates](/assets/FZSbIbk.gif)
 
 (0.0, 0.0) refers to the bottom left and (1.0, 1.0) refers to the top right.
 
@@ -175,7 +175,7 @@ Once you know the pixel is in the polygon, you can shade it however you want!
 
 If you implemented what I've described your square will look crisp, but start rendering some irregular polygons and you will see some janky diagonal lines that look like stairs:
 
-![polygon_jank](https://i.imgur.com/8tQYll5.png)
+![polygon_jank](/assets/8tQYll5.gif)
 
 This is because we've been treating pixels as shaded or unshaded for a given polygon; there will necessarily be boundaries on a diagonal line where a pixel passes our test and gets shaded while the neighboring pixel fails the test, creating a stair-like pattern, a result of [aliasing](https://en.wikipedia.org/wiki/Aliasing).
 
@@ -185,7 +185,7 @@ Where before we took one sample and decided whether or not to shade the pixel, n
 
 There are many anti-aliasing methods to choose from, but this simple technique can turn those janky edges pictured above into the much less janky edges pictured below:
 
-![less_jank](https://i.imgur.com/G9m1lkg.png)
+![less_jank](/assets/G9m1lkg.gif)
 
 Some steps are still visible here where the lines almost become parallel with scanlines (the worst case). You can take your pursuit of smooth polygons much further if that's your taste. [See here](http://mlab.uiah.fi/~kkallio/antialiasing/EdgeFlagAA.pdf) for a good start.
 
@@ -210,7 +210,7 @@ In this chapter we will make our polygons into water color through a series of d
 
 Let's start with a simple regular n-gon. A regular n-gon is a polygon whose n vertices are evenly spaced on the circumference of a circle:
 
-![regular_ngon](https://i.imgur.com/soFcGEB.gif)
+![regular_ngon](/assets/soFcGEB.gif)
 
 Let's make a function to get a point on the circumference of a circle at a given angle:
 
@@ -283,7 +283,7 @@ localStrength (Poly vs) vertex = distance left right
 
 Here's how it ought to look, applying it to the polygon recursively:
 
-![warp](https://i.imgur.com/6v3O85D.gif)
+![warp](/assets/6v3O85D.gif)
 
 #### Subdividing our N-gon
 
@@ -317,13 +317,13 @@ subdivideEdges p@(Poly vs) = Poly vs'
 
 The polygon's shape shouldn't change. Here's an illustration of subdividing recursively with vertices highlighted:
 
-![subdivision](https://imgur.com/JUyoVlo.gif)
+![subdivision](/assets/JUyoVlo.gif)
 
 #### Creating a watercolor splotch
 
 We create layers of the watercolor by combining these two functions and applying them recursively:
 
-![watercolor_layer](https://i.imgur.com/ktiVSnH.gif)
+![watercolor_layer](/assets/ktiVSnH.gif)
 
 Once we have this layer we composite it by:
 
@@ -331,7 +331,7 @@ Once we have this layer we composite it by:
 2. Decrease opacity to 2-4%.
 3. Apply the warp function 4-5 more times to each duplicate.
 
-![splotch](https://i.imgur.com/DJJknRA.png)
+![splotch](/assets/DJJknRA.gif)
 
 You will find different results depending on the order in which you apply subdivision and warp functions.
 
@@ -339,11 +339,11 @@ You can also change the spread of different areas by adding to your local streng
 
 You can also start from the base polygon at each layer instead of working with duplicates of a pre-warped layer. This is my favorite method:
 
-![multilayer](https://i.imgur.com/JUEgeRy.png)
+![multilayer](/assets/JUEgeRy.gif)
 
 Or you could make the vertex offsets pull inward toward the polygon center instead of outward:
 
-![inward](https://i.imgur.com/BLrwPUp.png)
+![inward](/assets/BLrwPUp.gif)
 
 That's it! There are too many variants of these rules to go over, so I'll leave them to explore.
 

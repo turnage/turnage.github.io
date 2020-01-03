@@ -12,9 +12,9 @@ rss_include = true
 This article is an introduction to writing [generative art](https://en.wikipedia.org/wiki/Generative_art) with Haskell, using a stack inspired by [Ben Kovach's similar post](https://www.kovach.me/posts/2018-03-07-generating-art.html) I came across in March. If you plan to follow along see the [deps list](#dependencies-to-follow-along). I assume familiarity with Haskell and an interest in generative art.
 
 <div class="img_row">
-  <img class="col one_third" src="https://i.imgur.com/fpN2AGO.png" title="Seed 347593857234897520"/>
-  <img class="col one_third" src="https://i.imgur.com/xWFQL0Z.png" title="Seed 99924583058"/>
-  <img class="col one_third" src="https://i.imgur.com/atuesRr.jpg" title="Seed 98239276903311"/>
+  <img class="col one_third" src="/assets/fpN2AGO.gif" title="Seed 347593857234897520"/>
+  <img class="col one_third" src="/assets/xWFQL0Z.gif" title="Seed 99924583058"/>
+  <img class="col one_third" src="/assets/atuesRr.gif" title="Seed 98239276903311"/>
 </div>
 
 <p class="caption">
@@ -62,7 +62,7 @@ In this simple example code we create an image surface and realize two Render mo
 
 <script src="https://gist.github.com/turnage/a949ff777ad04871251fb197152faa94.js?file=Main1.hs"></script>
 
-![](https://i.imgur.com/VK3YHNH.png)
+![](/assets/VK3YHNH.gif)
 
 Both monads in the example code above follow the typical structure we'll use moving forward. Each drawing action is made of
 
@@ -83,7 +83,7 @@ Here is an example program that draws a triangle with the Contour type.
 
 <script src="https://gist.github.com/turnage/a949ff777ad04871251fb197152faa94.js?file=Main2.hs"></script>
 
-![](https://i.imgur.com/CEF9Btu.png)
+![](/assets/CEF9Btu.gif)
 
 ### Mattes
 
@@ -95,15 +95,15 @@ This function creates a Render monad which draws ````src````, multiplying (in 0-
 
 For example, with this matte:
 
-![](https://i.imgur.com/KMLyLBb.png)
+![](/assets/KMLyLBb.gif)
 
 And this source:
 
-![](https://i.imgur.com/zsg0mie.png)
+![](/assets/zsg0mie.gif)
 
 ````alphaMatte matte source```` looks like this:
 
-![](https://i.imgur.com/dLyxKQV.png)
+![](/assets/dLyxKQV.gif)
 
 <br>
 
@@ -121,9 +121,9 @@ Running the Generate monad will yield a Render monad we can use. I recommend thi
 
 Both of the following images were rendered with the above code; I only changed the arguments to ````World```` between them.
 
-![](https://i.imgur.com/tcefhrb.png)
+![](/assets/tcefhrb.gif)
 
-![](https://i.imgur.com/WNga6NL.png)
+![](/assets/WNga6NL.gif)
 
 <br>
 
@@ -137,8 +137,8 @@ We'll put our Reader monad in a State transformer, then we can sample random var
 
 Now the box we render will have a random color each invocation:
 
-![](https://i.imgur.com/O6XUbZR.png)
-![](https://i.imgur.com/3RDKa66.png)
+![](/assets/O6XUbZR.gif)
+![](/assets/3RDKa66.gif)
 
 <br>
 
@@ -167,7 +167,7 @@ This code renders frames to show the second method. I use ````convert *.png out.
 
 <script src="https://gist.github.com/turnage/a949ff777ad04871251fb197152faa94.js?file=Main5.hs"></script>
 
-![](https://i.imgur.com/gNUGDOS.gif)
+![](/assets/gNUGDOS.gif)
 
 Here's an animation I wrote using this technique:
 

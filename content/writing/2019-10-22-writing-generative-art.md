@@ -11,7 +11,7 @@ rss_include = true
 
 A few years ago I began writing generative art, my first exploration of art for art’s own sake.
 
-![](https://i.imgur.com/e2rsMVb.png)
+![](/assets/e2rsMVb.gif)
 <p class="caption">sounds; 2018<br/>
 My first "piece".</p>
 
@@ -31,7 +31,7 @@ On a late night debugging some compute shaders for an overcomplicated simulation
 frustration with making unsatisfying art came to a boil. It had been days since I saw pixels;
 I was only working on the simulation framework.
 
-![](https://i.imgur.com/AfsM0wW.png)
+![](/assets/AfsM0wW.gif)
 <p class="caption">ghosts; 2018<br/>
 A raymarch shader I wrote. Raymarches are complicated and I hate writing them.</p>
 
@@ -51,7 +51,7 @@ I realized in retrospect that a fear of appearing to others as simple, derivativ
 
 I wrote more pieces I sincerely wanted to make. As I did I learned how it felt to know what I want, and I started to feel uncomfortable when I didn’t. I tried my best to apply the new self honesty I found whenever that discomfort came up, which turned out to be often in my life in general. The difficulty was not at all isolated to generative art.
 
-![](https://i.imgur.com/NQSHjw3.png)
+![](/assets/NQSHjw3.gif)
 <p class="caption">expansion; 2019<br/>
 I absolutely wanted to make this.</p>
 

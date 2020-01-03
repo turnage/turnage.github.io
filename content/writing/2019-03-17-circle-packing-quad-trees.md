@@ -22,8 +22,8 @@ Prerequisites:
 
 
 <div class="img_row">
-  <img class="col half" src="https://i.imgur.com/YGtcMYs.jpg" title="Seed 347593857234897520"/>
-  <img class="col half" src="https://i.imgur.com/nsNn1kV.jpg" title="Seed 99924583058"/>
+  <img class="col half" src="/assets/YGtcMYs.gif" title="Seed 347593857234897520"/>
+  <img class="col half" src="/assets/nsNn1kV.gif" title="Seed 99924583058"/>
 </div>
 
 <p class="caption">Some images generated using the methods described in this article.</p>
@@ -75,7 +75,7 @@ in the tree is not necessarily the nearest point in 2D space, or nearest circle.
 I've used my MSPaint skills to explain (the green circle is the one we are querying the tree for the
 nearest neighbor of):
 
-![](https://i.imgur.com/xLeunQT.png)
+![](/assets/xLeunQT.gif)
 
 The smaller circle in the query circle's quadrant will be closer in the tree, but the larger circle
 in a neighboring quadrant is actually closer.
@@ -165,7 +165,7 @@ If you implement this and compare it with the `N^2` stochastic search method fro
 beginner tutorial you should find your wait times much lower! I packed the following
 100,000 circles in under 1 second using this method!
 
-![](https://i.imgur.com/FBk7AAB.jpg)
+![](/assets/FBk7AAB.gif)
 
 For simply packing circles this algorithm is probably not worth it; packed circles are
 packed circles. But generally fast collision detection solutions will become a lot easier

@@ -33,7 +33,7 @@ rule![
 ]
 ```
 
-![](https://i.imgur.com/1Emik4Z.png)
+![](/assets/1Emik4Z.gif)
 
 ## Table of Contents
 
@@ -45,7 +45,7 @@ rule![
 
 We'll create this render:
 
-![](https://i.imgur.com/k6aJK0e.png)
+![](/assets/k6aJK0e.gif)
 
 To follow along I assume you have [Rust](https://rustup.rs/) and at least some familiarity with it.
 Also keep open [the docs](https://docs.rs/immense)! They are thorough.
@@ -88,13 +88,13 @@ If you `cargo run` you should see a new file called `my_mesh.obj`.
 
 Now we'll need an object file viewer. I personally use [MeshLab](http://www.meshlab.net/#description) for its reload button. Open `my_mesh.obj` in MeshLab and you should see:
 
-![](https://i.imgur.com/e5SEt2e.png)
+![](/assets/e5SEt2e.gif)
 
 Notice the reload button I've highlighted. You can click this to refresh the mesh from disk whenever you `cargo run` to see your updates.
 
 ## Synthesizing Our Structure
 
-![](https://i.imgur.com/vphlJNE.jpg)
+![](/assets/vphlJNE.gif)
 
 We'll first create a diorama shape (marked in red), then make each tile in the planes into a piano key pattern (marked in blue).
 
@@ -125,7 +125,7 @@ let rule = grid_of(5, 5, shrunk_cube);
 
 This repeats a downscaled (at `0.9`) cube 5x5. We downscale just so it's easier to see the borders in the mesh viewer. It should look like this:
 
-![](https://i.imgur.com/DZrC7B0.png)
+![](/assets/DZrC7B0.gif)
 
 Now we'll repeat this rule with some rotations to get a diorama shape:
 
@@ -148,7 +148,7 @@ fn diorama(
 let rule = diorama(size: usize, shrunk_cube);
 ```
 
-![](https://i.imgur.com/Maw6X6C.png)
+![](/assets/Maw6X6C.gif)
 
 ### Piano Keys
 
@@ -183,7 +183,7 @@ impl ToRule for PianoKey {
 
 Now we need to squeeze a few of these into the x and z dimensions of the unit cube so we can plug a piano keys rule into our diorama rule. To do that we'll shrink each one on x to `1/keys` and shift them `-1* (0.5+0.5/keys)`. This is my best effort at a helpful diagram:
 
-![](https://i.imgur.com/H2HBo3H.png)
+![](/assets/H2HBo3H.gif)
 
 ````rust
 fn piano_keys(keys: usize) -> Rule {
@@ -220,7 +220,7 @@ write_meshes(
 
 You should see something like this in your viewer.
 
-![](https://i.imgur.com/jKOwzOw.png)
+![](/assets/jKOwzOw.gif)
 
 
 # Rendering
@@ -231,11 +231,11 @@ A real walk through on using a renderer is out of scope for this tutorial, but f
 
 Open the template file and import your mesh object file:
 
-![](https://i.imgur.com/K2w9IzC.png)
+![](/assets/K2w9IzC.gif)
 
 Press `F12` and you should start seeing render progress!
 
-![](https://i.imgur.com/9KOb3Wg.png)
+![](/assets/9KOb3Wg.gif)
 
 When it's done you can save your result by pressing `F3`.
 
