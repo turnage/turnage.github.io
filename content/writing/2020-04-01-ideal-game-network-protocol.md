@@ -252,7 +252,7 @@ These should be delivered unreliably, but sequenced: packets are sent, but not
 retransmitted if dropped. The receiver is guaranteed to receive packets at most
 once, and in sequence. For example the receiver may see packets 1, 2, 4, 8, 9, …
 
-**Causal** packets, such as player input in an RTS, or a map download, influence
+**Causal** packets, such as player input in an RTS, influence
 the meaning of all later packets and will not be superseded. Dropped packets of
 this class require remediation, and there is no benefit to receiving later
 packets if old ones are missing.
@@ -265,7 +265,7 @@ Any general game network protocol must support at least these two delivery
 methods, and allow the creation of independent streams.
 
 Another notable method is reliable unordered delivery. This is the best method
-for big data transfers that can’t be used until they are complete; it doesn’t
+for big data transfers that can’t be used until they are complete; for example it doesn’t
 matter which chunks of the map arrive in what order, they just all need to
 arrive to complete it. In practice libraries often expose this as “delivering
 arbitrarily large packets” and handle the fragmentation internally. A user would
