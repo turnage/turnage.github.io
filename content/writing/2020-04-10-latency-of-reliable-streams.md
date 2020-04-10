@@ -117,7 +117,7 @@ datasheet](https://docs.google.com/spreadsheets/d/12OemlDCDSaWygtYKG6TcOACPjfgwj
 and [benchmark code](https://github.com/turnage/miknet/tree/master/bench).
 
 <iframe width="632" height="391" seamless frameborder="0" scrolling="no"
-src="https://docs.google.com/spreadsheets/d/e/2PACX-1vSg30OZuxM2lZcNBehn2nwXfXi3XCYx0MGNhBD43YNgOW5dIDtKnBEVhpT8M_OSvuo-TJVrM0P1AtcN/pubchart?oid=1470078334&amp;format=interactive"></iframe>
+src="https://docs.google.com/spreadsheets/d/e/2PACX-1vSg30OZuxM2lZcNBehn2nwXfXi3XCYx0MGNhBD43YNgOW5dIDtKnBEVhpT8M_OSvuo-TJVrM0P1AtcN/pubchart?oid=1470078334&amp;format=image"></iframe>
 
 In the simulation of normal conditions, both KCP and ENet maintain lower and
 less variant latency than TCP.
@@ -128,7 +128,7 @@ latency over 10 runs is 37.074ms (deviation 11.218ms). ENet round trips the
 payload in 71% of the time it takes KCP to round trip the same payload. 
 
 <iframe width="647" height="371" seamless frameborder="0" scrolling="no"
-src="https://docs.google.com/spreadsheets/d/e/2PACX-1vSg30OZuxM2lZcNBehn2nwXfXi3XCYx0MGNhBD43YNgOW5dIDtKnBEVhpT8M_OSvuo-TJVrM0P1AtcN/pubchart?oid=1743140131&amp;format=interactive"></iframe>
+src="https://docs.google.com/spreadsheets/d/e/2PACX-1vSg30OZuxM2lZcNBehn2nwXfXi3XCYx0MGNhBD43YNgOW5dIDtKnBEVhpT8M_OSvuo-TJVrM0P1AtcN/pubchart?oid=1743140131&amp;format=image"></iframe>
 
 In the turbulent conditions, only KCP Turbo avoids significant latency spikes.
 KCP Turbo holds significantly lower latency than ENet, with a mean round trip
