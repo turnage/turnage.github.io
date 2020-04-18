@@ -3,22 +3,25 @@
 
 <body>
     {% include "nav.html" %}
-    <div class="img_row">
-        <div class="col three_quarters showcase">
+    <div class="img_row showcase">
+        <div class="col three_quarters">
             {% for asset in page.assets %}
             {% if asset is containing("main") %}
             <img src="{{ get_url(path=asset) }}"></img>
             {% endif %}
             {% endfor %}
+        </div>
+	<div class="col quarter">
             {% for asset in page.assets %}
             {% if asset is containing("detail") %}
             <img src="{{ get_url(path=asset) }}"></img>
             {% endif %}
             {% endfor %}
-        </div>
-        <div class="col quarter pitch">
-            <h2>{{page.title}}</h2>
-            <p class="caption">{{page.date}}</p>
-        </div>
+	</div>
     </div>
+    <article>
+	<h2>{{page.title}}</h2>
+	<p class="caption" style="text-align: left;">{{page.date}}</p>
+	{{ page.content | safe }}
+    </article>
 </body>
