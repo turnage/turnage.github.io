@@ -1,0 +1,14 @@
+{% include "head.html" %}
+</head>
+
+<body>
+    {% include "nav.html" %}
+
+    <h2 class="page_title">turnage</h2>
+    <p class="caption" style="font-size: 18px">
+    <a href="https://github.com/turnage">github</a> | 
+    <a href="https://www.linkedin.com/in/turnage/">linkedin</a>
+    </p>
+
+    {{ section.content | safe }}
+</body>
