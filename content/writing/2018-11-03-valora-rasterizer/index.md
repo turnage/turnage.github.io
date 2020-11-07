@@ -117,5 +117,3 @@ This rasterizer design makes valora possible.
 Liberating the rasterizer from the drawing pipeline allows artists to re-use its work. Artists can
 use it to explore raster graphics on CPU with low commitment, or operate on paths such as by
 applying boolean operations to them, performing hit detection, and path offsetting.
-
-I will write more about valora as I work on it. If you’re interested in updates, sign up for my [RSS feed](/rss.xml) and [mailing list](https://groups.google.com/forum/#!forum/turnage)!
