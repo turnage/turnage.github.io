@@ -7,6 +7,7 @@
     {{ section.content | safe }}
   </div>
   {% for post in section.pages %}
-  <h3><a href="{{ post.permalink }}">{{ post.title }}</a></h3>
+  <h3 class="post_title"><a href="{{ post.permalink }}">{{ post.title }}</a></h3>
+  <p class="date">{{ post.date | safe }}</p>
   {% endfor %}
 </body>

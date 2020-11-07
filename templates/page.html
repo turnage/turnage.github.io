@@ -3,7 +3,7 @@
 
 <body>
     {% include "nav.html" %}
-    <h2>{{ page.title }}</h2>
-    <p>{{ page.date }}</p>
+    <h2 class="post_title">{{ page.title }}</h2>
+    <p class="date">{{ page.date }}</p>
     {{ page.content | safe }}
 </body>
