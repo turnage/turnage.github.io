@@ -295,7 +295,3 @@ data in this post. I will continue to build simulations and integrate more
 protocols into the suite. The ability to quickly test guesses about how these
 protocols behave will hopefully help me investigate what the “ideal” protocol
 looks like, if it exists.
-
-Stay tuned with my [RSS Feed](https://paytonturnage.com/rss.xml) to follow the
-investigation. This is how I am spending quarantine.
-
