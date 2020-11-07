@@ -5,7 +5,9 @@
     {% include "nav.html" %}
     <h2 class="post_title">{{ page.title }}</h2>
     <p class="date">{{ page.date }}</p>
+    <article>
     {{ page.content | safe }}
+    </article>
 
     {% include "mailing_list.html" %}
 </body>
