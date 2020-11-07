@@ -1,6 +1,30 @@
 $image_spacing: 8px
 $page_width: 750px
 
+$atkinson-font-path: "assets/fonts/atkinson";
+
+@font-face
+  src: url("#{$atkinson-font-path}/Atkinson-Hyperlegible-Regular-102a.woff2") format('woff2')
+  font-family: 'Atkinson'
+
+@font-face
+  src: url("#{$atkinson-font-path}/Atkinson-Hyperlegible-Bold-102a.woff2") format('woff2')
+  font-weight: bold
+  font-family: 'Atkinson'
+
+@font-face
+  src: url("#{$atkinson-font-path}/Atkinson-Hyperlegible-Italic-102a.woff2") format('woff2')
+  font-style: italic
+  font-family: 'Atkinson'
+
+@font-face
+  src: url("#{$atkinson-font-path}/Atkinson-Hyperlegible-BoldItalic-102a.woff2") format('woff2')
+  font-style: italic
+  font-weight: bold
+  font-family: 'Atkinson'
+
+
+
 *
   -webkit-box-sizing: border-box;
   -moz-box-sizing: border-box;
@@ -89,7 +113,7 @@ a
   text-decoration: none
 
 body
-  font-family: 'Montserrat', sans-serif
+  font-family: 'Atkinson'
   padding: 11px
   margin: 40px auto
   max-width: $page_width

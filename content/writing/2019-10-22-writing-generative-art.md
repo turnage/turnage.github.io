@@ -49,14 +49,11 @@ The polygons I wanted all along.</p>
 
 I realized in retrospect that a fear of appearing to others as simple, derivative, or deluded was what inhibited me from even privately acknowledging what I wanted to make. The unfamiliar vulnerability of sharing art with others brought with it an urgent need to prove myself to no one in particular.
 
-I wrote more pieces I sincerely wanted to make. As I did I learned how it felt to know what I want, and I started to feel uncomfortable when I didn’t. I tried my best to apply the new self honesty I found whenever that discomfort came up, which turned out to be often in my life in general. The difficulty was not at all isolated to generative art.
+I wrote more pieces I sincerely wanted to make. As I did I learned to listen to an internal sense of direction I didn't realize I had, first in the comparatively trivial activity of writing generative art, but gradually in more areas of my life. A healthy balance between internal and external direction offers something special in terms of not-being-in-internal-turmoil that utter surrender to either just cannot.
 
 ![](/assets/NQSHjw3.gif)
 <p class="caption">expansion; 2019<br/>
 I absolutely wanted to make this.</p>
+Improving my ability to listen to my own feelings has revealed to me that I have feelings and opinions about nearly everything, in real time. Not all of these opinions are valuable of course, but some are.
 
-Improving my ability to listen to my own feelings has revealed to me that I have feelings and opinions about nearly everything going on in my life, in real time.
-
-I feel excitement now in my day to day because I have feelings about even small things. I remember better because I can recall how I felt about events. The experiences of other people are more understandable and vivid because I can recognize some of the feelings they have from having seen them in myself. I can better identify disconnects between what I’m doing and what I want, which enables me to address internal discomforts that used to be unnameable.
-
-I am grateful to have found the generative art community. It is one of the most wholesome and supportive communities I have ever belonged to. Sharing artwork is a formative experience and thanks to this community, it’s been a fulfilling and worthwhile one for me.
+I am grateful to have found the generative art community. It is one of the most wholesome and supportive communities I have ever belonged to. It introduced me to the process of making art from where I stood – I was just looking for a way to practice algorithms and optimizations – and through it I have learned lessons about being a human that a person with a "pragmatic" disposition basically needs to be tricked into learning. Sharing artwork has been a formative experience and thanks to this community, it’s been a fulfilling and worthwhile one for me.
