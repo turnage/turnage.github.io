@@ -4,8 +4,8 @@ cd ..
 rm -rf paytonturnage.com
 cp -R turnage.github.io paytonturnage.com
 cd paytonturnage.com
-rm -rf .git
 ./preprocess.fish
+rm -rf .git
 zola build
 cd public
 git init
