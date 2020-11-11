@@ -13,8 +13,8 @@
     {{ section.content | safe }}
 
     <link rel="stylesheet"
-          href="https://unpkg.com/littlefoot/dist/littlefoot.css"/>
-    <script src="https://unpkg.com/littlefoot/dist/littlefoot.js"
+	  href="{{ get_url(path="third_party/littlefoot/littlefoot.css") }}"/>
+    <script src="{{ get_url(path="third_party/littlefoot/littlefoot.js") }}"
 	    type="application/javascript">
     </script>
     <script type="application/javascript">

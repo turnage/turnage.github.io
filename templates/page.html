@@ -10,4 +10,13 @@
     </article>
 
     {% include "mailing_list.html" %}
+
+    <link rel="stylesheet"
+	  href="{{ get_url(path="third_party/littlefoot/littlefoot.css") }}"/>
+    <script src="{{ get_url(path="third_party/littlefoot/littlefoot.js") }}"
+	    type="application/javascript">
+    </script>
+    <script type="application/javascript">
+	littlefoot.littlefoot()
+    </script>
 </body>
